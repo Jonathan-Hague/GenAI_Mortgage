@@ -1,0 +1,52 @@
+# Model configuration
+model:
+  vae:
+    latent_dim: 128
+    hidden_dims: [32, 64, 128, 256]
+  
+  classifier:
+    hidden_dim: 64
+    num_classes: 2  # Binary classification for wildfire risk
+
+# Data configuration
+data:
+  image_size: [64, 64]
+  batch_size: 32
+  num_workers: 4
+  train_ratio: 0.8
+  val_ratio: 0.1
+
+# Training configuration
+training:
+  num_epochs: 100
+  vae_lr: 0.001
+  classifier_lr: 0.001
+  weight_decay: 0.0001
+  early_stopping_patience: 10
+  
+  # Data augmentation
+  augmentation:
+    horizontal_flip_prob: 0.5
+    vertical_flip_prob: 0.5
+    rotation_degrees: 10
+    color_jitter:
+      brightness: 0.2
+      contrast: 0.2
+      saturation: 0.2
+    affine:
+      translate: [0.1, 0.1]
+      scale: [0.9, 1.1]
+
+# Evaluation configuration
+evaluation:
+  confidence_threshold: 0.8
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - roc_auc
+  risk_metrics:
+    - high_risk_ratio
+    - high_confidence_ratio
+    - high_risk_high_confidence_ratio 
