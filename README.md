@@ -29,7 +29,7 @@ This project implements a deep learning-based approach for wildfire risk assessm
 
 ## Usage
 
-1. Prepare your data:
+1. Prepare the data:
 ```bash
 python src/data/prepare_data.py --input_dir /path/to/satellite/images --output_dir /path/to/processed/data
 ```
@@ -96,4 +96,20 @@ The VAE-Logit architecture consists of:
 - Integration with financial risk models
 - Real-time risk assessment capabilities
 - Multi-hazard risk assessment
-- Integration with climate scenario analysis tools 
+- Integration with climate scenario analysis tools
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+MIT License
+
+## Contact
+
+jhague@stanford.edu
